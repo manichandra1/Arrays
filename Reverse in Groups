@@ -31,7 +31,7 @@ public class arrayGroupReverse
 		        high-=1;
 		      }
 		  }
-  }
+        }
 	public static void main(String[] args) {
 	  int i,n;
 		Scanner sc=new Scanner(System.in);
