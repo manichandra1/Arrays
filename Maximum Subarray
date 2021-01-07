@@ -1,0 +1,40 @@
+Find out the maximum sub-array of non negative numbers from an array.
+The sub-array should be contiguous.
+Maximum sub-array is defined in terms of the sum of the elements in the sub-array. Sub-array A is greater than sub-array B if sum(A) > sum(B).
+
+Example:
+A : [1, 2, 5, -7, 2, 3]
+The two sub-arrays are [1, 2, 5] [2, 3].
+The answer is [1, 2, 5] as its sum is larger than [2, 3]
+-----------------------------------------------------------------------------------------------------------
+NOTE 1: If there is a tie, then compare with segment's length and return segment which has maximum length.
+NOTE 2: If there is still a tie, then return the segment with minimum starting index.
+-----------------------------------------------------------------------------------------------------------
+def findSubarray(a, n):
+	    tot=0
+	    maxtot=0
+	    end=-1000
+	    st=0
+	    arrst=0
+    	for i in range(0,n):
+    	    tot=tot+a[i]
+    	    if tot<0 or a[i]<0:
+    	        tot=0
+    	        st=i+1
+    	    if tot>=maxtot:
+    	        maxtot=tot
+    	        arrst=st
+    	        end=i 
+    	if arrst<end:
+    	    return (a[arrst:end+1])
+    	x=max(a)
+    	if x<0:
+    	    return [-1]
+    	return [x]
+      
+arr=list(map(int,input().split())
+print(findSubarray(arr,len(arr))
+-----------------------------------------------------------------------------------------------------------
+Time Complexity:O(n)
+Space complexity:O(1)
+-----------------------------------------------------------------------------------------------------------
